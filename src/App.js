@@ -12,6 +12,7 @@ import EditInternship from './pages/Internship/EditInternship'
 import EmployeeDirectory from './pages/Employees/EmployeeDirectory'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddEmployee from './pages/Employees/AddEmployee'
+import EditEmployee from './pages/Employees/EditEmployee'
 export default function App() {
   return (
     <AuthProvider>
@@ -89,6 +90,24 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+
+
+
+          <Route
+            path="/edit-employees/:id"
+            element={
+              <ProtectedRoute>
+                <EditEmployee />
+              </ProtectedRoute>
+            }
+          />
+
+
+
+
+
+
+
         </Routes>
 
 

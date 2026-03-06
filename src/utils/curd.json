@@ -39,7 +39,7 @@
       "linkedin": "https://www.flaticon.com/search?word=check",
       "coverLetter": "Dear Hiring Manager,\n\nI am applying for the UI/UX Designer position. I have 1 month of hands-on experience designing user-friendly interfaces, creating wireframes, and working with tools like Figma. I am passionate about improving user experiences and eager to continue learning and growing in the field.\n\nI would appreciate the opportunity to contribute my creativity and skills to your team.\n\nSincerely,\nJohn cena\n",
       "availability": "",
-      "status": "Pending",
+      "status": "Approved",
       "appliedDate": "2026-03-06"
     }
   ],
@@ -58,17 +58,30 @@
       "location": "New York"
     },
     {
-      "id": "c508",
+      "id": "8158",
       "userId": "",
-      "name": "",
-      "email": "",
-      "phone": "",
-      "department": "",
-      "designation": "",
-      "experience": "",
-      "salary": "",
-      "joiningDate": "",
-      "location": ""
+      "name": "ww",
+      "email": "ww",
+      "phone": "9784587277",
+      "department": "Finance",
+      "designation": "CA",
+      "experience": "5",
+      "salary": "520000",
+      "joiningDate": "2024-06-01",
+      "location": "New Delhi"
+    },
+    {
+      "id": "da3c",
+      "userId": "",
+      "name": "ww",
+      "email": "ww@gmail.com",
+      "phone": "1234567797",
+      "department": "Marketing",
+      "designation": "Sales",
+      "experience": "2",
+      "salary": "25000",
+      "joiningDate": "2023-07-01",
+      "location": "New Delhi"
     }
   ],
   "applications": []
