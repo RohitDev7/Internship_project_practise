@@ -11,6 +11,8 @@ export default function Dashboard() {
         employees: 0,
         applications: 0
     })
+
+    
     const [barData, setBarData] = useState([])
     const [pieData, setPieData] = useState([])
 
@@ -76,6 +78,10 @@ return (
             <div className="stat-card">
                 <h5>Employees</h5>
                 <h2>{stats.employees}</h2>
+
+                {/* <div className="d-flex justify-content-between">
+                    <p className="p-0 m-0">Active  (2)</p>  <p className="p-0 m-0">Inactive  (2)</p> 
+                </div> */}
             </div>
 
             <div className="stat-card">

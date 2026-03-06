@@ -13,12 +13,12 @@ export default function EmployeeDirectory() {
       .catch(err => {
         console.log("Error fetching employees", err)
       })
-  },[])
+  }, [])
 
-    const deleteItem = async (id) => {
-        await axios.delete(`http://127.0.0.1:5001/employees/${id}`)
-        setEmployess(employess.filter((item) => item.id !== id))
-    }
+  const deleteItem = async (id) => {
+    await axios.delete(`http://127.0.0.1:5001/employees/${id}`)
+    setEmployess(employess.filter((item) => item.id !== id))
+  }
 
   return (
     <div>
@@ -30,7 +30,7 @@ export default function EmployeeDirectory() {
           <Link to="/add-employee" className='btn btn-primary'>Add Employee</Link>
         </div>
         <div className="chart-card internship-card">
-          <Table striped bordered hover>
+          <Table striped bordered >
             <thead>
               <tr>
                 <th>ID</th>
@@ -38,16 +38,17 @@ export default function EmployeeDirectory() {
                 <th>Email</th>
                 <th>Department</th>
                 <th>Designation</th>
-                 <th>Salary</th>
+                <th>Salary</th>
                 <th>Joining Date</th>
                 <th>Location</th>
                 <th>Status</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody>
 
 
-{employess.map((item) => (
+              {employess.map((item) => (
                 <tr key={item.id}>
                   <td>{item.id}</td>
                   <td>{item.name}</td>
@@ -57,17 +58,22 @@ export default function EmployeeDirectory() {
                   <td>{item.salary}</td>
                   <td>{item.joiningDate}</td>
                   <td>{item.location}</td>
-                   <td>
-                                                          <Link to={`/edit-employees/${item.id}`}>
-                                                              <button>Edit</button>
-                                                          </Link>
-                  
-                                                          <button onClick={() => deleteItem(item.id)}>
-                                                              Delete
-                                                          </button>
-                                                      </td>
+                  <td
+                    style={{
+                      color: item.status === "Active" ? "green" : "red"
+                    }}
+                  >{item.status}</td>
+                  <td>
+                    <Link to={`/edit-employees/${item.id}`}>
+                      <button>Edit</button>
+                    </Link>
+
+                    <button onClick={() => deleteItem(item.id)}>
+                      Delete
+                    </button>
+                  </td>
                 </tr>
-             ))}
+              ))}
             </tbody>
           </Table>
         </div>

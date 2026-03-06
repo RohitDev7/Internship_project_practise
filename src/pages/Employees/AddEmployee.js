@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function AddEmployee() {
-      const navigate = useNavigate();
+    const navigate = useNavigate();
     const [sidebarOpen, setSidebarOpen] = useState(true);
 
     const [employeeData, setEmployeeData] = useState({
@@ -20,6 +20,7 @@ export default function AddEmployee() {
         salary: "",
         joiningDate: "",
         location: "",
+        status: "",
 
     })
 
@@ -119,6 +120,18 @@ export default function AddEmployee() {
                                         <input className="form-control" name="location" onChange={handleChange} />
                                     </div>
                                 </Col>
+
+                                <Col md={6} className="mb-3">
+                                    <div className="form-group">
+                                        <label>Department</label>
+                                        <select className="form-control" name="status" onChange={handleChange}>
+                                            <option>Status</option>
+                                            <option>Active</option>
+                                            <option>Inactive</option>
+                                        </select>
+                                    </div>
+                                </Col>
+
 
 
                                 <Col md={12} className="mb-3">

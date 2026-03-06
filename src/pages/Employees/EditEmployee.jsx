@@ -22,6 +22,7 @@ export default function EditEmployee() {
         salary: "",
         joiningDate: "",
         location: "",
+        status:"",
 
     })
 
@@ -93,9 +94,10 @@ export default function EditEmployee() {
                                 <Col md={6} className="mb-3">
                                     <div className="form-group">
                                         <label>Department</label>
-                                        <select className="form-control" name="department"  
-                                        value={employeeData.department} 
-                                        onChange={e => setEmployeeData({ ...employeeData, department: e.target.value })}>
+                                        <select className="form-control" name="department"
+                                            value={employeeData.department}
+                                            onChange={e => setEmployeeData({ ...employeeData, department: e.target.value })}
+                                            >
                                             <option>IT</option>
                                             <option>HR</option>
                                             <option>Finance</option>
@@ -107,11 +109,11 @@ export default function EditEmployee() {
                                 <Col md={6} className="mb-3">
                                     <div className="form-group">
                                         <label>Designation</label>
-                                        <input 
-                                        className="form-control" 
-                                        name="designation" 
-                                        value={employeeData.designation} 
-                                        onChange={e => setEmployeeData({ ...employeeData, designation: e.target.value })} 
+                                        <input
+                                            className="form-control"
+                                            name="designation"
+                                            value={employeeData.designation}
+                                            onChange={e => setEmployeeData({ ...employeeData, designation: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -119,11 +121,11 @@ export default function EditEmployee() {
                                 <Col md={6} className="mb-3">
                                     <div className="form-group">
                                         <label>Experience</label>
-                                        <input 
-                                        className="form-control" 
-                                        name="experience" 
-                                         value={employeeData.experience} 
-                                        onChange={e => setEmployeeData({ ...employeeData, experience: e.target.value })} 
+                                        <input
+                                            className="form-control"
+                                            name="experience"
+                                            value={employeeData.experience}
+                                            onChange={e => setEmployeeData({ ...employeeData, experience: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -131,11 +133,11 @@ export default function EditEmployee() {
                                 <Col md={6} className="mb-3">
                                     <div className="form-group">
                                         <label>Salary</label>
-                                        <input 
-                                        className="form-control" 
-                                        name="salary" 
-                                        value={employeeData.salary} 
-                                        onChange={e => setEmployeeData({ ...employeeData, salary: e.target.value })} 
+                                        <input
+                                            className="form-control"
+                                            name="salary"
+                                            value={employeeData.salary}
+                                            onChange={e => setEmployeeData({ ...employeeData, salary: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -143,12 +145,12 @@ export default function EditEmployee() {
                                 <Col md={6} className="mb-3">
                                     <div className="form-group">
                                         <label>Joining Date</label>
-                                        <input 
-                                        type="date" 
-                                        className="form-control" 
-                                        name="joiningDate" 
-                                       value={employeeData.joiningDate} 
-                                        onChange={e => setEmployeeData({ ...employeeData, joiningDate: e.target.value })}
+                                        <input
+                                            type="date"
+                                            className="form-control"
+                                            name="joiningDate"
+                                            value={employeeData.joiningDate}
+                                            onChange={e => setEmployeeData({ ...employeeData, joiningDate: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -156,13 +158,30 @@ export default function EditEmployee() {
                                 <Col md={6} className="mb-3">
                                     <div className="form-group">
                                         <label>Location</label>
-                                        <input 
-                                        className="form-control"
-                                         name="location" 
-                                         value={employeeData.location} 
-                                         onChange={e => setEmployeeData({ ...employeeData, location: e.target.value })} />
+                                        <input
+                                            className="form-control"
+                                            name="location"
+                                            value={employeeData.location}
+                                            onChange={e => setEmployeeData({ ...employeeData, location: e.target.value })}
+                                             />
                                     </div>
                                 </Col>
+
+                                <Col md={6} className="mb-3">
+                                    <div className="form-group">
+                                        <label>Status</label>
+                                        <select className="form-control" name="status" 
+                                        value={employeeData.status}
+                                            onChange={e => setEmployeeData({ ...employeeData, status: e.target.value })}
+                                        >
+                                            <option>Active</option>
+                                            <option>Inactive</option>
+                                        </select>
+                                    </div>
+                                </Col>
+
+
+
 
                                 <Col md={12} className="mb-3">
                                     <Button type="submit" className="signup-btn">Save Employee</Button>

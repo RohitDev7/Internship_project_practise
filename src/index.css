@@ -251,3 +251,38 @@ td.cover-letter {
     min-width: 450px;
     white-space: break-spaces !important;
 }
+
+.parent-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+.job-card{
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background: #fff;
+  transition: 0.3s;
+}
+
+.job-card img{width:50px;}
+
+.job-card:hover{
+  transform: translateY(-5px);
+}
+
+.job-title{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.job-company,
+.job-location,
+.job-exp{
+  font-size: 14px;
+  margin: 5px 0;
+}

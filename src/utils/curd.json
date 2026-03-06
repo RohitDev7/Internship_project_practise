@@ -55,7 +55,8 @@
       "experience": "5",
       "salary": "52000",
       "joiningDate": "2025-03-01",
-      "location": "New York"
+      "location": "New York",
+      "status": "Active"
     },
     {
       "id": "8158",
@@ -68,7 +69,8 @@
       "experience": "5",
       "salary": "520000",
       "joiningDate": "2024-06-01",
-      "location": "New Delhi"
+      "location": "New Delhi",
+      "status": "Active"
     },
     {
       "id": "da3c",
@@ -81,8 +83,130 @@
       "experience": "2",
       "salary": "25000",
       "joiningDate": "2023-07-01",
-      "location": "New Delhi"
+      "location": "New Delhi",
+      "status": "Inactive"
     }
   ],
-  "applications": []
+  "applications": [
+    {
+      "id": "076c",
+      "userId": "",
+      "fullName": "john cena",
+      "email": "johncena@gmail.com",
+      "phone": "1234567797",
+      "dob": "2026-03-06",
+      "gender": "Male",
+      "experience": "5",
+      "currentCompany": "ww",
+      "currentCTC": "10000000",
+      "expectedCTC": "20000000",
+      "skills": "react js",
+      "education": "btech",
+      "university": "Delhi University",
+      "graduationYear": "2018",
+      "address": "delhi",
+      "city": "delhi",
+      "state": "delhi",
+      "country": "India",
+      "linkedin": "https://github.com/RohitDev7/Internship_project_practise/tree/main/src/pages/Employees",
+      "portfolio": "https://github.com/RohitDev7/Internship_project_practise/tree/main/src/pages/Employees",
+      "resume": "https://github.com/RohitDev7/Internship_project_practise/tree/main/src/pages/Employees",
+      "coverLetter": "Dear Hiring Manager\nI am applying for the UI/UX Designer position. I have 1 month of hands-on experience designing user-friendly interfaces, creating wireframes, and working with tools like Figma. I am passionate about improving user experiences and eager to continue learning and growing in the field.\\n\\nI would appreciate the opportunity to contribute my creativity and skills to your team. \nSincerely\nJohn cena"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "1",
+      "title": "React Developer",
+      "company": "TCS",
+      "location": "Delhi",
+      "experience": "2-4 Years",
+      "salary": "6-10 LPA",
+      "jobType": "Full Time",
+      "skills": [
+        "React",
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Redux"
+      ],
+      "postedDate": "2 days ago",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Tata_Consultancy_Services_old_logo.svg/1280px-Tata_Consultancy_Services_old_logo.svg.png",
+      "description": "Looking for a React developer with experience in building scalable frontend applications."
+    },
+    {
+      "id": "2",
+      "title": "Frontend Developer",
+      "company": "Infosys",
+      "location": "Noida",
+      "experience": "1-3 Years",
+      "salary": "4-8 LPA",
+      "jobType": "Full Time",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React"
+      ],
+      "postedDate": "1 day ago",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/1280px-Infosys_logo.svg.png",
+      "description": "Frontend developer required with strong knowledge of responsive UI development."
+    },
+    {
+      "id": "3",
+      "title": "Node JS Developer",
+      "company": "Wipro",
+      "location": "Bangalore",
+      "experience": "3-5 Years",
+      "salary": "8-14 LPA",
+      "jobType": "Full Time",
+      "skills": [
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "REST API"
+      ],
+      "postedDate": "3 days ago",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Wipro_Primary_Logo_Color_RGB.svg/1280px-Wipro_Primary_Logo_Color_RGB.svg.png",
+      "description": "Backend developer required with strong Node.js and API development experience."
+    },
+    {
+      "id": "4",
+      "title": "UI Developer",
+      "company": "Accenture",
+      "location": "Gurgaon",
+      "experience": "2-4 Years",
+      "salary": "5-9 LPA",
+      "jobType": "Full Time",
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Bootstrap",
+        "Figma"
+      ],
+      "postedDate": "4 days ago",
+      "logo": "https://1000logos.net/wp-content/uploads/2021/12/Accenture-logo.jpg",
+      "description": "UI developer with strong design to code conversion experience."
+    },
+    {
+      "id": "5",
+      "title": "Full Stack Developer",
+      "company": "HCL",
+      "location": "Pune",
+      "experience": "3-6 Years",
+      "salary": "10-16 LPA",
+      "jobType": "Full Time",
+      "skills": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express",
+        "JavaScript"
+      ],
+      "postedDate": "Today",
+      "logo": "https://e7.pngegg.com/pngimages/685/961/png-clipart-logo-brand-trademark-product-design-hcl-technologies-design-blue-text.png",
+      "description": "Full stack developer needed for building scalable web applications."
+    }
+  ]
 }

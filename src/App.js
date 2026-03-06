@@ -13,6 +13,11 @@ import EmployeeDirectory from './pages/Employees/EmployeeDirectory'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddEmployee from './pages/Employees/AddEmployee'
 import EditEmployee from './pages/Employees/EditEmployee'
+import Application from './pages/Application/ApplicationJobs'
+import ApplicationForm from './pages/Application/ApplicationForm'
+import ApplicationT from './pages/Application/ApplicationT'
+
+
 export default function App() {
   return (
     <AuthProvider>
@@ -43,6 +48,36 @@ export default function App() {
               </PublicRoute>
             }
           />
+
+          <Route
+            path="/all-application"
+            element={
+              <ProtectedRoute>
+               <Application/>
+              </ProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/application-form"
+            element={
+              <ProtectedRoute>
+               <ApplicationForm/>
+              </ProtectedRoute>
+            }
+          />
+
+<Route
+            path="/application"
+            element={
+              <ProtectedRoute>
+               <ApplicationT/>
+              </ProtectedRoute>
+            }
+          />
+
+         
+          
 
 
           <Route

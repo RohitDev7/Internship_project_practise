@@ -23,6 +23,10 @@ export default function Sidebar({ open, setOpen }) {
           <li>
             <Link to="/employees">Employees</Link>
           </li>
+
+          <li>
+            <Link to="/application">Application</Link>
+          </li>
         </ul>
 
       </div>
