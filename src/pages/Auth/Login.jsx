@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from "axios";
 import { AuthContext } from "../../context/AuthContext"
-
+import { Link } from "react-router-dom";
 export default function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -30,7 +30,7 @@ export default function Login() {
             )
             if (res.data.length > 0) {
                 login(res.data[0])
-                navigate("/dashboard")
+                navigate("/all-application")
             } else {
                 setError("Invalid email or password")
             }
@@ -65,6 +65,7 @@ export default function Login() {
                                 />
                             </div>
                             <button className="signup-btn">Login</button>
+                            <Link to="/signup">Sign up</Link>
                             {error && <p style={{ color: "red" }}>{error}</p>}
                         </form>
                     </div>

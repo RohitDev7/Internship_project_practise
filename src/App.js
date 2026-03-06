@@ -52,18 +52,18 @@ export default function App() {
           <Route
             path="/all-application"
             element={
-              <ProtectedRoute>
+              <PublicRoute>
                <Application/>
-              </ProtectedRoute>
+              </PublicRoute>
             }
           />
 
           <Route
             path="/application-form"
             element={
-              <ProtectedRoute>
+              <PublicRoute>
                <ApplicationForm/>
-              </ProtectedRoute>
+              </PublicRoute>
             }
           />
 

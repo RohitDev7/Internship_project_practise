@@ -13,6 +13,13 @@
       "email": "rkumarplanetecomsolution7@gmail.com",
       "password": "123",
       "role": "Intern"
+    },
+    {
+      "id": "a6d2",
+      "name": "John Cena",
+      "email": "JohnCena@gmail.com",
+      "password": "123",
+      "role": "Admin"
     }
   ],
   "internships": [

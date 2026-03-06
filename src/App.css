@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+
+.popup-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.popup-box{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  text-align:center;
+  width:300px;
+}
+
+.popup-btn{
+  display:block;
+  width:100%;
+  margin:10px 0;
+  padding:10px;
+  border:none;
+  background:#007bff;
+  color:white;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.popup-btn:hover{
+  background:#0056b3;
+}
