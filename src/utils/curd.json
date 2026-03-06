@@ -1,0 +1,75 @@
+{
+  "users": [
+    {
+      "id": "1efb",
+      "name": "Rohit Kumar",
+      "email": "rkumarplanetecomsolution7@gmail.com",
+      "password": "Rohit@9711RS",
+      "role": "HR"
+    },
+    {
+      "id": "7b73",
+      "name": "Rohit Kumar",
+      "email": "rkumarplanetecomsolution7@gmail.com",
+      "password": "123",
+      "role": "Intern"
+    }
+  ],
+  "internships": [
+    {
+      "id": "3f96",
+      "userId": "",
+      "fullName": "John cena",
+      "email": "Johncena@gmail.com",
+      "phone": "165544884514",
+      "city": "delhi",
+      "internshipTitle": "UI Designer",
+      "department": "IT",
+      "location": "Delhi",
+      "type": "Offline",
+      "duration": "6 Months",
+      "stipend": "5000",
+      "college": "Delhi University",
+      "course": "Btech",
+      "year": "2018",
+      "skills": "Figma",
+      "experience": "1 months",
+      "resume": "https://www.flaticon.com/search?word=check",
+      "portfolio": "https://www.flaticon.com/search?word=check",
+      "linkedin": "https://www.flaticon.com/search?word=check",
+      "coverLetter": "Dear Hiring Manager,\n\nI am applying for the UI/UX Designer position. I have 1 month of hands-on experience designing user-friendly interfaces, creating wireframes, and working with tools like Figma. I am passionate about improving user experiences and eager to continue learning and growing in the field.\n\nI would appreciate the opportunity to contribute my creativity and skills to your team.\n\nSincerely,\nJohn cena\n",
+      "availability": "",
+      "status": "Pending",
+      "appliedDate": "2026-03-06"
+    }
+  ],
+  "employees": [
+    {
+      "id": "dd1e",
+      "userId": "",
+      "name": "John cena",
+      "email": "Johnncena@gmail.com",
+      "phone": "1234567797",
+      "department": "HR",
+      "designation": "HR",
+      "experience": "5",
+      "salary": "52000",
+      "joiningDate": "2025-03-01",
+      "location": "New York"
+    },
+    {
+      "id": "c508",
+      "userId": "",
+      "name": "",
+      "email": "",
+      "phone": "",
+      "department": "",
+      "designation": "",
+      "experience": "",
+      "salary": "",
+      "joiningDate": "",
+      "location": ""
+    }
+  ],
+  "applications": []
+}

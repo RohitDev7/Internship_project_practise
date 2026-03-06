@@ -11,3 +11,243 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.signup-parents {
+    min-height: 100vh;
+}
+
+.signup-child {
+    width: 100%;
+    max-width: 500px;
+}
+
+.signup-card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.signup-title {
+    text-align:left !important;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #333;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 6px;
+    font-weight: 700;
+    color: #444;
+}
+.form-group input,
+.form-group select {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s ease;
+    font-size: 14px;
+    height: 45px;
+}
+
+
+textarea {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: 0.3s ease;
+    font-size: 14px;
+    height: 90px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #4e73df;
+    outline: none;
+    box-shadow: 0 0 5px rgba(78, 115, 223, 0.5);
+}
+
+.signup-btn {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #4e73df;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: auto;
+}
+
+.signup-btn:hover {
+    background: #2e59d9;
+}
+
+
+
+/**sibar**/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -170px;
+    width: 250px;
+    height: 100vh;
+    background: #1e293b;
+    color: white;
+    padding-top: 60px;
+    transition: 0.3s;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 25px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.sidebar ul li:hover {
+  background: #334155;
+}
+
+.toggleBtn {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background: #1e293b;
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+.dashboard-container {
+    padding: 40px;
+    background: #f4f7fb;
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    width: calc(100% - 80px);
+    margin-left: auto;
+}
+
+.dashboard-container.sidebar-open {
+    width: calc(100% - 250px);
+    margin-left: auto;
+}
+
+.dashboard-title{
+    font-weight:600;
+    margin-bottom:30px;
+    color:#2c3e50;
+}
+
+/* stats row */
+
+.stats-row{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:20px;
+}
+
+/* card */
+
+.stat-card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+    border-left:5px solid #4f46e5;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 30px rgba(0,0,0,0.12);
+}
+
+.stat-card h5{
+    color:#6b7280;
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.stat-card h2{
+    font-size:32px;
+    font-weight:600;
+    color:#111827;
+}
+
+/* charts */
+
+.chart-row{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+    width: 100%;
+}
+
+.chart-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    width: 100%;
+}
+.chart-card h4{
+    margin-bottom:20px;
+    font-weight:600;
+    color:#374151;
+}
+
+
+
+.chart-card.internship-card {
+    padding: 25px 0;
+}
+
+.chart-card.internship-card table {
+    margin: 0;
+}
+.chart-card.internship-card table th {
+    padding: 10px 25px;
+    white-space: nowrap;
+}
+.chart-card.internship-card table td {
+    padding: 10px 25px;
+    white-space: nowrap;
+}
+
+td.cover-letter {
+    width: 250px;
+    min-width: 450px;
+    white-space: break-spaces !important;
+}
