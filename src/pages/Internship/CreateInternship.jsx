@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import MyNavbar from "../component/Navbar";
+
+
 export default function CreateInternship() {
     const navigate = useNavigate();
 
@@ -43,7 +48,25 @@ export default function CreateInternship() {
         navigate("/login");
     };
 
+// useEffect(() => {
+//     const user = localStorage.getItem("user");
+
+//     if (!user) {
+//         toast.error("Please Signup or Login First");
+
+//         setTimeout(() => {
+//             navigate("/signup");
+//         }, 3000);
+//     }
+// }, [navigate]);
+
+
+
+
     return (
+        <>
+        <MyNavbar/>
+        <ToastContainer position="top-right" autoClose={3000} />
         <div className="signup-parent">
             <div className="signup-child">
                 <div className="signup-card">
@@ -294,5 +317,6 @@ export default function CreateInternship() {
                 </div>
             </div>
         </div>
+        </>
     );
 }

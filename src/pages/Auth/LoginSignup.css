@@ -51,7 +51,6 @@
     background: #2e59d9;
 }
 
-/* Popup Overlay */
 .popup-overlay{
   position: fixed;
   top: 0;
@@ -65,7 +64,6 @@
   z-index: 1000;
 }
 
-/* Popup Box */
 .popup-box{
   background: #fff;
   padding: 30px;
@@ -76,19 +74,16 @@
   animation: popupScale 0.3s ease;
 }
 
-/* Popup Title */
 .popup-box h3{
   margin-bottom: 10px;
   color: #333;
 }
 
-/* Popup Text */
 .popup-box p{
   color: #666;
   margin-bottom: 20px;
 }
 
-/* Popup Buttons */
 .popup-btn{
   display: block;
   width: 100%;
@@ -108,7 +103,6 @@
   transform: translateY(-1px);
 }
 
-/* Animation */
 @keyframes popupScale{
   from{
     transform: scale(0.8);

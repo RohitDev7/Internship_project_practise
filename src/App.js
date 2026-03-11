@@ -16,6 +16,9 @@ import EditEmployee from './pages/Employees/EditEmployee'
 import Application from './pages/Application/ApplicationJobs'
 import ApplicationForm from './pages/Application/ApplicationForm'
 import ApplicationT from './pages/Application/ApplicationT'
+import EditApplication from './pages/Application/EditApplication'
+import UserPersona from './pages/User/UserPersona'
+import EditUser from './pages/User/EditUser'
 
 
 export default function App() {
@@ -23,7 +26,7 @@ export default function App() {
     <AuthProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/" element={<Navigate to="/index" />} />
           <Route
             path="/login"
             element={
@@ -51,10 +54,10 @@ export default function App() {
           />
 
           <Route
-            path="/all-application"
+            path="/index"
             element={
               <PublicRoute>
-               <Application/>
+                <Application />
               </PublicRoute>
             }
           />
@@ -63,22 +66,35 @@ export default function App() {
             path="/application-form"
             element={
               <PublicRoute>
-               <ApplicationForm/>
+                <ApplicationForm />
               </PublicRoute>
             }
           />
 
-<Route
+          <Route
             path="/application"
             element={
               <ProtectedRoute>
-               <ApplicationT/>
+                <ApplicationT />
               </ProtectedRoute>
             }
           />
 
-         
-          
+
+          <Route
+            path="/edit-application/:id"
+            element={
+              <ProtectedRoute>
+                <EditApplication />
+              </ProtectedRoute>
+            }
+          />
+
+
+
+
+
+
 
 
           <Route
@@ -118,7 +134,7 @@ export default function App() {
             }
           />
 
-        <Route
+          <Route
             path="/add-employee"
             element={
               <ProtectedRoute>
@@ -139,6 +155,27 @@ export default function App() {
           />
 
 
+
+<Route
+            path="/user/"
+            element={
+              <ProtectedRoute>
+                <UserPersona />
+              </ProtectedRoute>
+            }
+          />
+
+          
+<Route
+            path="/edit-user/:id"
+            element={
+              <ProtectedRoute>
+                <EditUser />
+              </ProtectedRoute>
+            }
+          />
+
+          
 
 
 

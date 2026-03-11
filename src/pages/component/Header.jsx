@@ -16,8 +16,7 @@ const logout = () => {
   return (
     <header className={sidebarOpen ? "main-header sidebar-open" : "main-header"}>
       <div className="header-left">
-        {/* <button onClick={() => setSidebarOpen(!sidebarOpen)}>☰</button> */}
-        <h4 className="logo">JobPortal Admin</h4>
+        <h4 className="logo"></h4>
       </div>
 
       <div className="header-right">
@@ -32,8 +31,9 @@ const logout = () => {
 
         {open && (
           <div className="profile-dropdown">
-            <button onClick={() => navigate("/settings/profile")}>Profile</button>
-            <button onClick={() => navigate("/settings")}>Settings</button>
+            <button onClick={() => navigate("/user")}>User</button>
+            {/* <button onClick={() => navigate("/settings/profile")}>Profile</button>
+            <button onClick={() => navigate("/settings")}>Settings</button> */}
             <button className="logout-btn" onClick={logout}>Logout</button>
           </div>
         )}

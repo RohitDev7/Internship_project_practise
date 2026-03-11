@@ -3,11 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Table from 'react-bootstrap/Table';
 import Sidebar from "../component/Sidebar"
+import Header from '../component/Header';
 
 export default function InternshipList() {
     const [sidebarOpen, setSidebarOpen] = useState(true)
     const [internships, setInternships] = useState([])
-
+    const [expandedRow, setExpandedRow] = useState(null);
     const InternshipFetch = async () => {
         const response = await axios.get("http://localhost:5001/internships")
         setInternships(response.data)
@@ -25,9 +26,9 @@ export default function InternshipList() {
     return (
         <div>
             <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
-
+            <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
             <div className={sidebarOpen ? "dashboard-container sidebar-open" : "dashboard-container"}>
-                    <h2 className="signup-title">Internship</h2>
+                <h2 className="signup-title">Internship</h2>
                 <div className="chart-card internship-card">
                     <Table bordered responsive>
                         <thead>
@@ -56,9 +57,9 @@ export default function InternshipList() {
                         </thead>
 
                         <tbody>
-                            {internships.map((item) => (
+                            {internships.map((item,index) => (
                                 <tr key={item.id}>
-<td>{item.id}</td>
+                                    <td>{item.id}</td>
                                     <td>{item.fullName}</td>
                                     <td>{item.email}</td>
                                     <td>{item.phone}</td>
@@ -80,15 +81,38 @@ export default function InternshipList() {
                                             item.status === "Pending"
                                                 ? "orange"
                                                 : item.status === "Approved"
-                                                ? "green"
-                                                : "red"
+                                                    ? "green"
+                                                    : "red"
                                     }}>
                                         {item.status}
                                     </td>
 
                                     <td>{item.appliedDate}</td>
 
-                                    <td className='cover-letter'>{item.coverLetter}</td>
+                                    <td className='cover-letter'>
+                                        {(() => {
+                                            const words = item.coverLetter ? item.coverLetter.split(" ") : [];
+                                            const shortText = words.slice(0, 20).join(" ");
+                                            const isExpanded = expandedRow === index;
+
+                                            return (
+                                                <>
+                                                    {isExpanded ? item.coverLetter : shortText}
+
+                                                    {words.length > 20 && (
+                                                        <span
+                                                            style={{ color: "blue", cursor: "pointer", marginLeft: "5px" }}
+                                                            onClick={() =>
+                                                                setExpandedRow(isExpanded ? null : index)
+                                                            }
+                                                        >
+                                                            {isExpanded ? " Read Less" : "... Read More"}
+                                                        </span>
+                                                    )}
+                                                </>
+                                            );
+                                        })()}
+                                    </td>
 
                                     <td>
                                         <Link to={`/edit-internship/${item.id}`}>

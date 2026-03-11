@@ -3,6 +3,7 @@ import "./LoginSignup.css";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+import MyNavbar from "../component/Navbar";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -49,116 +50,123 @@ export default function Signup() {
     }
   };
 
+
+
+
   return (
-    <div className="signup-parent">
-      <div className="signup-child">
-        <div className="signup-card">
-          <h2 className="signup-title">Signup</h2>
+    <>
+      <MyNavbar />
+      <div className="signup-parent">
+        <div className="signup-child">
+          <div className="signup-card">
+            <h2 className="signup-title">Signup</h2>
 
-          <Form onSubmit={handleSubmit}>
-            <Row>
-              <Col md={6} className="mb-1">
-                <div className="form-group">
-                  <Form.Label>Full Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    placeholder="Enter your full name"
-                    value={form.name}
-                    onChange={handleChange}
-                    name="name"
-                  />
-                </div>
-              </Col>
+            <Form onSubmit={handleSubmit}>
+              <Row>
+                <Col md={6} className="mb-1">
+                  <div className="form-group">
+                    <Form.Label>Full Name</Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="Enter your full name"
+                      value={form.name}
+                      onChange={handleChange}
+                      name="name"
+                    />
+                  </div>
+                </Col>
 
-              <Col md={6} className="mb-1">
-                <div className="form-group">
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    placeholder="Enter your email"
-                    value={form.email}
-                    onChange={handleChange}
-                    name="email"
-                  />
-                </div>
-              </Col>
+                <Col md={6} className="mb-1">
+                  <div className="form-group">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="Enter your email"
+                      value={form.email}
+                      onChange={handleChange}
+                      name="email"
+                    />
+                  </div>
+                </Col>
 
-              <Col md={6} className="mb-1">
-                <div className="form-group">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Enter password"
-                    value={form.password}
-                    onChange={handleChange}
-                    name="password"
-                  />
-                </div>
-              </Col>
+                <Col md={6} className="mb-1">
+                  <div className="form-group">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder="Enter password"
+                      value={form.password}
+                      onChange={handleChange}
+                      name="password"
+                    />
+                  </div>
+                </Col>
 
-              <Col md={6} className="mb-1">
-                <div className="form-group">
-                  <Form.Label>Confirm Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    placeholder="Confirm password"
-                    value={form.confirmPassword}
-                    onChange={handleChange}
-                    name="confirmPassword"
-                  />
-                </div>
-              </Col>
-            </Row>
-            <Col md={12} className="mb-1">
-              <div className="form-group">
-                <Form.Label>Role</Form.Label>
-                <Form.Select
-                  value={form.role}
-                  onChange={handleChange}
-                  name="role"
-                >
-                  <option>Intern</option>
-                  <option>HR</option>
-                  <option>Admin</option>
-                </Form.Select>
-              </div>
-            </Col>
-            
-            <button className="signup-btn">Signup</button>
+                <Col md={6} className="mb-1">
+                  <div className="form-group">
+                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder="Confirm password"
+                      value={form.confirmPassword}
+                      onChange={handleChange}
+                      name="confirmPassword"
+                    />
+                  </div>
+                </Col>
 
-            {error && <p className="text-danger mt-2">{error}</p>}
-          </Form>
-          <Link to="/login" className="signup-signin">
-            Sign In
-          </Link>
-        </div>
-      </div>
+                <Col md={12} className="mb-1">
+                  <div className="form-group">
+                    <Form.Label>Role</Form.Label>
+                    <Form.Select
+                      value={form.role}
+                      onChange={handleChange}
+                      name="role"
+                    >
+                      <option>HR</option>
+                      <option>Admin</option>
+                      <option>User</option>
+                    </Form.Select>
+                  </div>
+                </Col>
+              </Row>
 
-      {/* Popup */}
+              <button className="signup-btn">Signup</button>
 
-      {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup-box">
-            <h3>Signup Successful 🎉</h3>
-
-            <p>What would you like to do?</p>
-
-            <button
-              className="popup-btn"
-              onClick={() => navigate("/create-internship")}
-            >
-              Apply Internship
-            </button>
-
-            <button
-              className="popup-btn"
-              onClick={() => navigate("/all-application")}
-            >
-              Apply Experience Application
-            </button>
+              {error && <p className="text-danger mt-2">{error}</p>}
+            </Form>
+            <Link to="/login" className="signup-signin">
+              Sign In
+            </Link>
           </div>
         </div>
-      )}
-    </div>
+
+        {/* Popup */}
+
+        {showPopup && (
+          <div className="popup-overlay">
+            <div className="popup-box">
+              <h3>Signup Successfull!</h3>
+
+              <p>What would you like to do?</p>
+
+              <button
+                className="popup-btn"
+                onClick={() => navigate("/create-internship")}
+              >
+                Apply Internship
+              </button>
+
+              <button
+                className="popup-btn"
+                onClick={() => navigate("/application-form")}
+              >
+                Apply Experience Application
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
   );
 }

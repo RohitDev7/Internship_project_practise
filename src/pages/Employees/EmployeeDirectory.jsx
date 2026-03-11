@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Table from 'react-bootstrap/Table';
 import Sidebar from "../component/Sidebar"
 import { Link } from 'react-router-dom';
+import Header from '../component/Header';
 export default function EmployeeDirectory() {
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [employess, setEmployess] = useState([]);
@@ -23,7 +24,7 @@ export default function EmployeeDirectory() {
   return (
     <div>
       <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
-
+<Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
       <div className={sidebarOpen ? "dashboard-container sidebar-open" : "dashboard-container"}>
         <div className='d-flex justify-content-between align-items-center mb-4'>
           <h2 className="signup-title mb-0">Employee Data</h2>

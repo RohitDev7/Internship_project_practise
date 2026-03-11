@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import Sidebar from "../component/Sidebar";
 import { Link } from "react-router-dom";
+import Header from "../component/Header";
 
 export default function ApplicationT() {
 
   const [sidebarOpen, setSidebarOpen] = useState(true)
   const [applications, setApplications] = useState([])
+const [expandedRow, setExpandedRow] = useState(null);
 
   useEffect(() => {
     axios.get("http://127.0.0.1:5001/applications")
@@ -22,11 +24,16 @@ export default function ApplicationT() {
     setApplications(applications.filter((item) => item.id !== id))
   }
 
+
+
+
+
+
   return (
     <div>
 
       <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
-
+      <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       <div className={sidebarOpen ? "dashboard-container sidebar-open" : "dashboard-container"}>
 
         <h2 className="signup-title mb-4">Applications</h2>
@@ -62,102 +69,83 @@ export default function ApplicationT() {
                 <th>Cover Letter</th>
                 <th>Action</th>
               </tr>
-
             </thead>
-
             <tbody>
-
-              {applications.map((item) => (
-
+              {applications.map((item,index) => (
                 <tr key={item.id}>
-
                   <td>{item.id}</td>
-
-
                   <td>{item.fullName}</td>
-
                   <td>{item.email}</td>
-
                   <td>{item.phone}</td>
-
                   <td>{item.dob}</td>
-
                   <td>{item.gender}</td>
-
                   <td>{item.experience}</td>
-
                   <td>{item.currentCompany}</td>
-
                   <td>{item.currentCTC}</td>
-
                   <td>{item.expectedCTC}</td>
-
                   <td>{item.skills}</td>
-
                   <td>{item.education}</td>
-
                   <td>{item.university}</td>
-
                   <td>{item.graduationYear}</td>
-
                   <td>{item.address}</td>
-
                   <td>{item.city}</td>
-
                   <td>{item.state}</td>
-
                   <td>{item.country}</td>
-
                   <td>
                     <a href={item.linkedin} target="_blank" rel="noreferrer">
                       LinkedIn
                     </a>
                   </td>
-
                   <td>
                     <a href={item.portfolio} target="_blank" rel="noreferrer">
                       Portfolio
                     </a>
                   </td>
-
                   <td>
                     <a href={item.resume} target="_blank" rel="noreferrer">
                       Resume
                     </a>
                   </td>
+<td className="cover-letter">
+  {(() => {
+    const words = item.coverLetter ? item.coverLetter.split(" ") : [];
+    const shortText = words.slice(0, 20).join(" ");
+    const isExpanded = expandedRow === index;
 
-                  <td className='cover-letter'>
-                    {item.coverLetter}
-                  </td>
+    return (
+      <>
+        {isExpanded ? item.coverLetter : shortText}
 
+        {words.length > 20 && (
+          <span
+            style={{ color: "blue", cursor: "pointer", marginLeft: "5px" }}
+            onClick={() =>
+              setExpandedRow(isExpanded ? null : index)
+            }
+          >
+            {isExpanded ? " Read Less" : "... Read More"}
+          </span>
+        )}
+      </>
+    );
+  })()}
+</td>
                   <td>
- <Link to={`/edit-application/${item.id}`}>
+                    <Link to={`/edit-application/${item.id}`}>
                       <button>Edit</button>
                     </Link>
-
-
-
                     <button
-                      className="btn btn-danger btn-sm"
                       onClick={() => deleteApplication(item.id)}
                     >
                       Delete
                     </button>
-
                   </td>
-
                 </tr>
-
               ))}
-
             </tbody>
-
           </Table>
-
         </div>
-
       </div>
-
     </div>
   )
 }

@@ -1,16 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import Sidebar from "../component/Sidebar"
 import axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+import Sidebar from "../component/Sidebar"
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import Header from '../component/Header';
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import MyNavbar from '../component/Navbar';
-
-export default function ApplicationForm() {
+export default function EditInternship() {
+    const [sidebarOpen, setSidebarOpen] = useState(true)
+    const { id } = useParams();
     const navigate = useNavigate();
-    const [sidebarOpen, setSidebarOpen] = useState(true);
 
     const [employeeData, setEmployeeData] = useState({
         userId: "",
@@ -37,40 +35,35 @@ export default function ApplicationForm() {
         coverLetter: ""
     });
 
-    const handleChnage = (e) => {
-        setEmployeeData({ ...employeeData, [e.target.name]: e.target.value })
-    }
 
-    const handleSubmit = async (e) => {
+    useEffect(() => {
+        axios.get(`http://localhost:5001/applications/${id}`)
+            .then(res => setEmployeeData(res.data))
+            .catch(err => console.log("Error fetching applications details", err))
+    }, [id]);
+
+    const updateInternship = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:5001/applications", employeeData)
-        navigate("/application")
+        try {
+            await axios.put(`http://localhost:5001/applications/${id}`, employeeData);
+            navigate("/application");
+        }
+        catch (error) {
+            console.log("Error updating application", error);
+        }
     }
-
-
-    // useEffect(() => {
-    //     const user = localStorage.getItem("user");
-
-    //     if (!user) {
-    //         toast.error("Please Signup or Login First");
-
-    //         setTimeout(() => {
-    //             navigate("/signup");
-    //         }, 3000);
-    //     }
-    // }, [navigate]);
 
 
     return (
-        <div>
-            <ToastContainer position="top-right" autoClose={3000} />
-
-            <MyNavbar />
-            <div className="signup-parent">
-                <div className="signup-child">
+        <>
+            <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
+            <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+            <div className={sidebarOpen ? "dashboard-container sidebar-open" : "dashboard-container"}>
+                <div className="signup-parents">
+                    <h2 className="signup-title">Edit Internship Application</h2>
                     <div className="signup-card">
-                        <h2 className="signup-title">Application</h2>
-                        <Form onSubmit={handleSubmit}>
+
+                        <Form onSubmit={updateInternship}>
                             <Row>
 
                                 <Col md={6} className="mb-3">
@@ -79,7 +72,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="fullName"
-                                            onChange={handleChnage}
+                                            value={employeeData.fullName}
+                                            onChange={e => setEmployeeData({ ...employeeData, fullName: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -90,7 +84,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="email"
-                                            onChange={handleChnage}
+                                            value={employeeData.email}
+                                            onChange={e => setEmployeeData({ ...employeeData, email: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -101,7 +96,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="phone"
-                                            onChange={handleChnage}
+                                            value={employeeData.phone}
+                                            onChange={e => setEmployeeData({ ...employeeData, phone: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -113,7 +109,8 @@ export default function ApplicationForm() {
                                             type="date"
                                             className="form-control"
                                             name="dob"
-                                            onChange={handleChnage}
+                                             value={employeeData.dob}
+                                            onChange={e => setEmployeeData({ ...employeeData, dob: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -124,7 +121,8 @@ export default function ApplicationForm() {
                                         <select
                                             className="form-control"
                                             name="gender"
-                                            onChange={handleChnage}
+                                            value={employeeData.gender}
+                                            onChange={e => setEmployeeData({ ...employeeData, gender: e.target.value })}
                                         >
                                             <option>Male</option>
                                             <option>Female</option>
@@ -139,7 +137,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="experience"
-                                            onChange={handleChnage}
+                                            value={employeeData.experience}
+                                            onChange={e => setEmployeeData({ ...employeeData, experience: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -150,7 +149,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="currentCompany"
-                                            onChange={handleChnage}
+                                            value={employeeData.currentCompany}
+                                            onChange={e => setEmployeeData({ ...employeeData, currentCompany: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -161,7 +161,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="currentCTC"
-                                            onChange={handleChnage}
+                                            value={employeeData.currentCTC}
+                                            onChange={e => setEmployeeData({ ...employeeData, currentCTC: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -172,7 +173,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="expectedCTC"
-                                            onChange={handleChnage}
+                                            value={employeeData.expectedCTC}
+                                            onChange={e => setEmployeeData({ ...employeeData, expectedCTC: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -183,7 +185,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="skills"
-                                            onChange={handleChnage}
+                                            value={employeeData.skills}
+                                            onChange={e => setEmployeeData({ ...employeeData, skills: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -194,7 +197,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="education"
-                                            onChange={handleChnage}
+                                            value={employeeData.education}
+                                            onChange={e => setEmployeeData({ ...employeeData, education: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -205,7 +209,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="university"
-                                            onChange={handleChnage}
+                                            value={employeeData.university}
+                                            onChange={e => setEmployeeData({ ...employeeData, university: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -216,7 +221,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="graduationYear"
-                                            onChange={handleChnage}
+                                            value={employeeData.graduationYear}
+                                            onChange={e => setEmployeeData({ ...employeeData, graduationYear: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -227,7 +233,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="address"
-                                            onChange={handleChnage}
+                                            value={employeeData.address}
+                                            onChange={e => setEmployeeData({ ...employeeData, address: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -238,7 +245,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="city"
-                                            onChange={handleChnage}
+                                            value={employeeData.city}
+                                            onChange={e => setEmployeeData({ ...employeeData, city: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -249,7 +257,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="state"
-                                            onChange={handleChnage}
+                                             value={employeeData.state}
+                                            onChange={e => setEmployeeData({ ...employeeData, state: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -260,7 +269,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="country"
-                                            onChange={handleChnage}
+                                            value={employeeData.country}
+                                            onChange={e => setEmployeeData({ ...employeeData, country: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -271,7 +281,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="linkedin"
-                                            onChange={handleChnage}
+                                            value={employeeData.linkedin}
+                                            onChange={e => setEmployeeData({ ...employeeData, linkedin: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -282,7 +293,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="portfolio"
-                                            onChange={handleChnage}
+                                            value={employeeData.portfolio}
+                                            onChange={e => setEmployeeData({ ...employeeData, portfolio: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -293,7 +305,8 @@ export default function ApplicationForm() {
                                         <input
                                             className="form-control"
                                             name="resume"
-                                            onChange={handleChnage}
+                                            value={employeeData.resume}
+                                            onChange={e => setEmployeeData({ ...employeeData, resume: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -305,7 +318,8 @@ export default function ApplicationForm() {
                                             className="form-control"
                                             name="coverLetter"
                                             rows="4"
-                                            onChange={handleChnage}
+                                           value={employeeData.coverLetter}
+                                            onChange={e => setEmployeeData({ ...employeeData, coverLetter: e.target.value })}
                                         />
                                     </div>
                                 </Col>
@@ -321,6 +335,6 @@ export default function ApplicationForm() {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }

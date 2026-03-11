@@ -1,16 +1,19 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 
 export default function Sidebar({ open, setOpen }) {
 
   return (
     <>
       <div className={open ? "sidebar active" : "sidebar"}>
-
-        <button className="toggleBtn" onClick={() => setOpen(!open)}>
-          ☰
-        </button>
-
+        <div className="d-flex align-items-center w-100 justify-content-between p-4">
+          <Link to="/">
+            <h4 className="logo m-0 p-0">LOGO</h4>
+          </Link>
+          <button className="toggleBtn" onClick={() => setOpen(!open)}>
+            ☰
+          </button>
+        </div>
         <ul>
           <li>
             <Link to="/dashboard">Dashboard</Link>

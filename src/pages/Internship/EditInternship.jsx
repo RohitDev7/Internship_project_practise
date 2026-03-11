@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Sidebar from "../component/Sidebar"
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import Header from '../component/Header';
 
 export default function EditInternship() {
     const [sidebarOpen, setSidebarOpen] = useState(true)
@@ -50,7 +51,7 @@ export default function EditInternship() {
     return (
         <>
             <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
-
+            <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
             <div className={sidebarOpen ? "dashboard-container sidebar-open" : "dashboard-container"}>
                 <div className="signup-parents">
                     <h2 className="signup-title">Edit Internship Application</h2>

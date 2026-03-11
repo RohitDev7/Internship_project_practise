@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom'
+import MyNavbar from '../component/Navbar';
 
 export default function Application() {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export default function Application() {
 
   return (
     <>
+  <MyNavbar/>
       <div className="parent-container">
         <Container>
           <Row>
@@ -44,8 +46,6 @@ export default function Application() {
                     <div className='company-name'>
                       <h2 className='m-0 p-0'>{item.title}</h2>
                     </div>
-
-                        
                   </div>
                   <div className="card-header d-flex align-items-center gap-3">
                     <div className='company-name'>

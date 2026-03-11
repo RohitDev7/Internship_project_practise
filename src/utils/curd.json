@@ -5,35 +5,35 @@
       "name": "Rohit Kumar",
       "email": "rkumarplanetecomsolution7@gmail.com",
       "password": "Rohit@9711RS",
-      "role": "HR"
-    },
-    {
-      "id": "7b73",
-      "name": "Rohit Kumar",
-      "email": "rkumarplanetecomsolution7@gmail.com",
-      "password": "123",
-      "role": "Intern"
+      "role": "Admin"
     },
     {
       "id": "a6d2",
       "name": "John Cena",
       "email": "JohnCena@gmail.com",
       "password": "123",
-      "role": "Admin"
+      "role": "User"
     },
     {
       "id": "4605",
       "name": "Ritik",
       "email": "Ritik@gmail.com",
       "password": "123",
-      "role": "HR"
+      "role": "User"
     },
     {
-      "id": "437c",
-      "name": "ashu",
-      "email": "ashu@gmai.com",
+      "id": "12cb",
+      "name": "Modi hu",
+      "email": "modi@gmail.com",
+      "password": "modi",
+      "role": "User"
+    },
+    {
+      "id": "eaa2",
+      "name": "Pappu hu",
+      "email": "PappuG@gmail.com",
       "password": "123",
-      "role": "Intern"
+      "role": "User"
     }
   ],
   "internships": [
@@ -78,34 +78,6 @@
       "joiningDate": "2025-03-01",
       "location": "New York",
       "status": "Active"
-    },
-    {
-      "id": "8158",
-      "userId": "",
-      "name": "ww",
-      "email": "ww",
-      "phone": "9784587277",
-      "department": "Finance",
-      "designation": "CA",
-      "experience": "5",
-      "salary": "520000",
-      "joiningDate": "2024-06-01",
-      "location": "New Delhi",
-      "status": "Active"
-    },
-    {
-      "id": "da3c",
-      "userId": "",
-      "name": "ww",
-      "email": "ww@gmail.com",
-      "phone": "1234567797",
-      "department": "Marketing",
-      "designation": "Sales",
-      "experience": "2",
-      "salary": "25000",
-      "joiningDate": "2023-07-01",
-      "location": "New Delhi",
-      "status": "Inactive"
     }
   ],
   "applications": [
@@ -129,35 +101,60 @@
       "city": "delhi",
       "state": "delhi",
       "country": "India",
-      "linkedin": "https://github.com/RohitDev7/Internship_project_practise/tree/main/src/pages/Employees",
-      "portfolio": "https://github.com/RohitDev7/Internship_project_practise/tree/main/src/pages/Employees",
-      "resume": "https://github.com/RohitDev7/Internship_project_practise/tree/main/src/pages/Employees",
+      "linkedin": "https://github.com/",
+      "portfolio": "https://github.com/",
+      "resume": "https://github.com/",
       "coverLetter": "Dear Hiring Manager\nI am applying for the UI/UX Designer position. I have 1 month of hands-on experience designing user-friendly interfaces, creating wireframes, and working with tools like Figma. I am passionate about improving user experiences and eager to continue learning and growing in the field.\\n\\nI would appreciate the opportunity to contribute my creativity and skills to your team. \nSincerely\nJohn cena"
     },
     {
-      "id": "e167",
+      "id": "077c",
       "userId": "",
-      "fullName": "ww",
-      "email": "ww",
-      "phone": "1122222222",
-      "dob": "2026-03-07",
+      "fullName": "Modi Hu",
+      "email": "modi@gmail.com",
+      "phone": "1234567797",
+      "dob": "1992-04-01",
       "gender": "",
+      "experience": "25",
+      "currentCompany": "BJP me Fekku ki Company",
+      "currentCTC": "200000",
+      "expectedCTC": "300000",
+      "skills": "Fekne or ullu bna leta hu",
+      "education": "Pta nhi",
+      "university": "BJP",
+      "graduationYear": "2000",
+      "address": "Gujrat",
+      "city": "Ahmdbad",
+      "state": "Gujrat",
+      "country": "India",
+      "linkedin": "https://www.linkedin.com/",
+      "portfolio": "https://github.com/modi",
+      "resume": "https://www.youtube.com/@NarendraModi",
+      "coverLetter": "Prime Minister Narendra Modi has positioned Artificial Intelligence (AI) as a cornerstone of India’s development strategy, aiming to make the country one of the top three AI superpowers globally by 2047. His vision for AI, dubbed M.A.N.A.V. (Moral and Ethical Systems, Accountable Governance, National Sovereignty, Accessible and Inclusive, Valid and Legitimate), focuses on using technology for social inclusion and economic empowerment. \nPMIndia\nPMIndia\n +4\nKey highlights of PM Modi's portfolio and vision regarding AI include:\nThe IndiaAI Mission: The cabinet approved an ambitious mission with an investment of over ₹10,300 crore to build a secure, ethical, and inclusive AI ecosystem.\nInfrastructure Development: The initiative focuses on deploying 38,000+ GPUs to build compute capacity through public-private partnerships, alongside establishing an AIKosh platform for datasets and AI models.\nFocus Areas: Modi emphasizes AI for \"Global Common Good,\" with specific applications in agriculture (monitoring crop health), education, and healthcare.\n\"Made in India, Made for the World\": He advocates for AI models tailored to India’s diverse, multilingual landscape that are also scalable for global deployment.\nRegulation & Ethics: The government is focusing on creating guardrails against misinformation and ensuring data privacy, urging for a \"child-safe\" and \"family-guided\" AI space.\nStart-up Support: The government is fostering a vibrant startup ecosystem, promoting, and financing AI deep-tech, and encouraging \"frugal innovation\". \nIndiaAI\nIndiaAI\n +6\nRecent Developments (Early 2026):\nIndia AI Impact Summit 2026: PM Modi inaugurated this summit, highlighting the shift from mere AI consumption to AI creation in India.\nGlobal Collaboration: He has emphasized that India’s AI framework is focused on \"sovereignty, inclusivity, and innovation\".\nPost-Budget Focus: On March 9, 2026, he called for accelerating the integration of AI, automation, and digital economy studies into the education system. \nPrime Minister of India\nPrime Minister of India\n +4"
+    },
+    {
+      "id": "078c",
+      "userId": "USR8179",
+      "fullName": "Ritik Sharma",
+      "email": "ritik@gmail.com",
+      "phone": "1234567797",
+      "dob": "1992-04-01",
+      "gender": "Male",
       "experience": "5",
-      "currentCompany": "ww",
-      "currentCTC": "2",
-      "expectedCTC": "3",
-      "skills": "react",
-      "education": "w",
-      "university": "w",
-      "graduationYear": "ww",
-      "address": "w",
-      "city": "ww",
-      "state": "ww",
-      "country": "wwwwww",
-      "linkedin": "ww",
-      "portfolio": "ww",
-      "resume": "www",
-      "coverLetter": "wwww"
+      "currentCompany": "HDFC Bank",
+      "currentCTC": "200000",
+      "expectedCTC": "300000",
+      "skills": "Relationship Management, Banking Sales, Loan Processing, Credit Card Sales, Customer Handling",
+      "education": "BCom",
+      "university": "Kanpur University",
+      "graduationYear": "2015",
+      "address": "Satellite Road",
+      "city": "Kanpur",
+      "state": "Uttar Pradesh",
+      "country": "India",
+      "linkedin": "https://linkedin.com/in/",
+      "portfolio": "https://github.com/",
+      "resume": "https://example.com/resume/ritik-sharma.pdf",
+      "coverLetter": "Experienced Banking Sales Relationship Manager with expertise in acquiring new customers, managing client relationships, and selling banking products such as loans, credit cards, and investment plans. Skilled in achieving sales targets and providing excellent customer service."
     }
   ],
   "jobs": [

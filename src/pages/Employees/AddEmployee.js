@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import Sidebar from "../component/Sidebar"
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import Header from '../component/Header';
 
 
 export default function AddEmployee() {
@@ -41,7 +42,7 @@ export default function AddEmployee() {
     return (
         <>
             <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
-
+<Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
             <div className={sidebarOpen ? "dashboard-container sidebar-open" : "dashboard-container"}>
                 <div className="signup-parents">
                     <h2 className="signup-title">Add Employee</h2>
